@@ -8,7 +8,7 @@ import routesTasks from './routes/v1/task.routes';
 const app:Application = express();
 
 const optionsCors = {
-    origin: ['*'],
+    origin: "*",
     optionSuccessStatus: 200,
 };
 
