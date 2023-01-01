@@ -1,6 +1,6 @@
 import {Router, Request,Response} from 'express';
 const router = Router();
-import {pool} from '../db/db';
+import {pool} from '../../db/db';
 
 router.get('/ping', async (req:Request, res:Response):Promise<void>=> {
  pool.query('SELECT 1+1 as result',(err, rows, fields)=>{

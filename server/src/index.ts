@@ -3,8 +3,8 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import router from './routes/index.routes';
-import routesTasks from './routes/task.routes';
+import router from './routes/v1/index.routes';
+import routesTasks from './routes/v1/task.routes';
 const app:Application = express();
 
 const optionsCors = {
@@ -24,8 +24,8 @@ app.use(cors(optionsCors));
 
 
 //Routes
-app.use( router);
-app.use( routesTasks);
+app.use('/api/v1', router);
+app.use('/api/v1',routesTasks);
 
 
 
