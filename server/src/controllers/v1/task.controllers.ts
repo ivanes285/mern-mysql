@@ -42,12 +42,19 @@ const getTaskById = async (req: Request, res: Response): Promise<any> => {
 const createTask = async (req: Request, res: Response): Promise<any> => {
   try {
     const { title, description } = req.body;
-    const [rows] = await promisePool.query(
-      'INSERT INTO tasks (title,description) VALUES (?,?)',[title, description]);
+
+    if (title === undefined || title === null || title === '') {
+      throw { code: 400, message: 'title is required' };
+    }
+    if (description === undefined || description === null || description === '') {
+      throw { code: 400, message: 'description is required' };
+    }
+    const [rows] = await promisePool.query('INSERT INTO tasks (title,description) VALUES (?,?)',[title, description]);
     //const task= result[0];  "noImplicitAny": false en tsconfig
-    res.json({ task: { id: rows['insertId'], title, description } });
+    // res.status(200).json({ task: { id: rows['insertId'], title, description } });
+    res.status(200).json({message: 'Task created'});
   } catch (err: any) {
-  return  res.status(400).send(err.message);
+  return  res.status(400).json(err.message);
   }
  
 };
@@ -84,11 +91,11 @@ const updateTask = async (req: Request, res: Response): Promise<any> => {
 const deleteTask = async (req: Request, res: Response): Promise<any> => {
   try {
   const { id } = req.params;
-  const [rows] = await promisePool.query('DELETE FROM tasks WHERE id=?', [id]);
+  const [rows] = await promisePool.query('DELETE FROM tasks WHERE id=?', [parseInt(id) ]);
   if (rows['affectedRows'] === 0) {
     throw { code: 404, message: 'Task not found, id not exist' };
   }
-  res.status(200).json({ task: 'Delete Task' });
+  res.status(200).json({ message: 'Delete Task' });
 } catch (err: any) {
   return res.status(err.code).send(err.message);
 }
