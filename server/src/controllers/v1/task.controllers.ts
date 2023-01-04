@@ -67,21 +67,23 @@ const updateTask = async (req: Request, res: Response): Promise<any> => {
  try {
 
   const { id } = req.params;
-  let { title, description } = req.body;
-  const [task] = await promisePool.query('SELECT * FROM tasks WHERE id=?', [id]);
+  // let { title, description } = req.body;
+  // const [task] = await promisePool.query('SELECT * FROM tasks WHERE id=?', [id]);
 
-  if (title === undefined || title === null) {
-    title = task[0]['title'];
-  }
+  // if (title === undefined || title === null) {
+  //   title = task[0]['title'];
+  // }
 
-  if (description === undefined || description === null) {
-    description = task[0]['description'];
-  }
-  const [rows] = await promisePool.query('UPDATE tasks SET title=? , description=? WHERE id=?',[title, description, id]);
-  if (rows['changedRows'] !== 1) {
+  // if (description === undefined || description === null) {
+  //   description = task[0]['description'];
+  // }
+  // const [rows] = await promisePool.query('UPDATE tasks SET ? WHERE id=?',[title, description, id]);
+  
+  const [rows] = await promisePool.query('UPDATE tasks SET ? WHERE id=?',[req.body, id]);
+  if (rows['affectedRows'] !== 1) {
     throw { code: 404, message: 'Task not found, id not exist' };
   }
-  res.json({ task: 'Update Task' });
+  res.json({ message: 'Update Task' });
 } catch (err: any) {
  return res.status(err.code).send(err.message);
 }
