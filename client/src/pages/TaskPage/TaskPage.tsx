@@ -1,20 +1,18 @@
 import { getTasksRequest } from "@/api/tasks.api";
 import { TaskCard } from "@/components/TaskCard";
-import { alltasks } from "@/features/Task/TaskSlice";
 import { ITask } from "@/models/Task";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+
 
 export interface TaskPageInterface {}
 const TaskPage: React.FC<TaskPageInterface> = () => {
 
-  const dispatch = useDispatch();
+
   const [tasks, setTasks] = useState<ITask[]>([]);
   useEffect(() => {
     const response = async () => {
       const res = await getTasksRequest();
       setTasks(res.data);
-      dispatch(alltasks(tasks));
     };
     response();
   }, [tasks]);
