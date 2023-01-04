@@ -2,6 +2,6 @@ export interface ITask {
   id?: number;
   title: string;
   description: string;
-  done?: number;
+  done?: boolean;
   created_at?: string;
 }
