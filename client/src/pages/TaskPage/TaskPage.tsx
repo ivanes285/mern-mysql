@@ -18,9 +18,9 @@ const TaskPage: React.FC<TaskPageInterface> = () => {
   }, [tasks]);
 
   return (
-    <div>
+    <div >
       <h1 className="text-4xl text-white font-bold text-center pb-5">Tasks</h1>
-      <div className="grid grid-cols-3  gap-5 ">
+      <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-5 ">
       {tasks.length > 0 ? tasks.map((task: ITask) => <TaskCard key={task.id} task={task} />) : <h2>There are No tasks</h2>}
       </div>
     </div>

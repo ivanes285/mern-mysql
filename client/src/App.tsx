@@ -8,7 +8,7 @@ export default function App() {
     <Router>
       <div className="bg-slate-900 h-screen text-white">
         <Navbar /> {/* Navegación */}
-        <div className="container mx-auto py-4 px-10">
+        <div className="container mx-auto py-4 px-10  ">
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<TaskPage />} />
