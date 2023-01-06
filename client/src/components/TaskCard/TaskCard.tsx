@@ -25,9 +25,9 @@ const TaskCard: React.FunctionComponent<Props> = ({ task }) => {
   };
 
   return (
-    <div className="border-2 border-slate-600 rounded-md p-4 ">
-      <header className="flex flex-row items-center justify-between">
-        <h2 className="text-3xl font-bolt">{task.title}</h2>
+    <div className="border-2 border-slate-600 rounded-md p-4 overflow-hidden ">
+      <header className="flex flex-row items-center justify-between flex-wrap">
+        <h2 className="text-xl sm:text-2xl  md:text-3xl  ">{task.title}</h2>
         <span className="text-xl">{task.done ? "✔️" : "❌"}</span>
       </header>
       <p className="text-md">{task.description}</p>

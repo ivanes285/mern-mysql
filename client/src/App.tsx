@@ -6,7 +6,7 @@ import { Navbar } from "./components";
 export default function App() {
   return (
     <Router>
-      <div className="bg-slate-900 h-screen text-white">
+      <div className=" h-screen text-white">
         <Navbar /> {/* Navegación */}
         <div className="container mx-auto py-4 px-10  ">
           <Routes>

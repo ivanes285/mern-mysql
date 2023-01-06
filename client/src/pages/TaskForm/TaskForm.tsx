@@ -47,7 +47,7 @@ const TaskForm = () => {
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
-          <Form onSubmit={handleSubmit} className="border-2 border-slate-600 rounded-md p-8 min-w-fit max-w-xl mx-auto flex flex-col gap-6 font-serif text-lg">
+          <Form onSubmit={handleSubmit} className="border-2 border-slate-600 rounded-md p-8  max-w-xl mx-auto flex flex-col gap-6 font-serif text-lg">
             <div className="flex flex-col">
               <label className="">Tittle</label>
               <input
