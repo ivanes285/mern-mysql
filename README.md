@@ -2,7 +2,7 @@
 Es una aplicación básica de tareas ,que permite crear  
 
 
-## Backend
+# Backend
 Aplicacion con vite, typescript y como base de datos mysql creada y ejecutada en un contenedor
 ### Tecnologías
 
@@ -13,11 +13,11 @@ Aplicacion con vite, typescript y como base de datos mysql creada y ejecutada en
 - [x] pnpm 
 
 
-# Variables de Entorno
+## Variables de Entorno
 Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremos las siguientes variables de entorno 
 - PORT= 4000
 
-## Frontend
+# Frontend
 
 ### Tecnologías
 
@@ -39,15 +39,13 @@ Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremo
 
 
 <p align="center">
-    <img src="./src/assets/img/registro.PNG" />
+    <img src="../assets/taskpage.png" />
 <p/>
 
 
 <p align="center">
-    <img src="./src/assets/img/inicio.PNG" />
+    <img src="../assets/taskform.png" />
 <p/>
 
 
-<p align="center">
-    <img src="./src/assets/img/notas.PNG" />
-<p/>
+<
