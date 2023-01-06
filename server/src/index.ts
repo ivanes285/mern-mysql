@@ -3,6 +3,8 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import path from 'path';
+import {fileURLToPath} from 'url';
 import router from './routes/v1/index.routes';
 import routesTasks from './routes/v1/task.routes';
 const app:Application = express();
@@ -26,6 +28,11 @@ app.use(cors(optionsCors));
 //Routes
 app.use('/api/v1', router);
 app.use('/api/v1',routesTasks);
+
+//Static files
+// console.log("dirname",__dirname); => dirname C:\Users\iales\Desktop\mern-mysql\server\src
+app.use(express.static(path.join(__dirname, '../../client/dist'))); // Configuracion para poder desplegar
+
 
 
 
