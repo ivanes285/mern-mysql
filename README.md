@@ -35,9 +35,6 @@ Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremo
  ### Preview
 
 
-
-
-
 <p align="center">
     <img src="./assets/taskpage.png" />
 <p/>
