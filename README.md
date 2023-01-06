@@ -34,20 +34,17 @@ Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremo
 
  ### Preview
 
-[https://tasknotes.com/](https://tasknotes.herokuapp.com/)
+
 
 
 
 <p align="center">
-    <img src="./src/assets/img/registro.PNG" />
+    <img src="./assets/taskpage.png" />
 <p/>
 
 
 <p align="center">
-    <img src="./src/assets/img/inicio.PNG" />
+    <img src="./assets/taskform.png" />
 <p/>
 
 
-<p align="center">
-    <img src="./src/assets/img/notas.PNG" />
-<p/>
