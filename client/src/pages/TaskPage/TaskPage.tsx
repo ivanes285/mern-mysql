@@ -19,10 +19,10 @@ const TaskPage: React.FC<TaskPageInterface> = () => {
 
   return (
     <div>
-      <h1>Tasks</h1>
+      <h1 className="text-4xl text-white font-bold text-center pb-5">Tasks</h1>
+      <div className="grid grid-cols-3  gap-5 ">
       {tasks.length > 0 ? tasks.map((task: ITask) => <TaskCard key={task.id} task={task} />) : <h2>There are No tasks</h2>}
-      {/* <TaskCardPrueba /> */}
-
+      </div>
     </div>
   );
 };

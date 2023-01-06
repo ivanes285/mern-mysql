@@ -25,15 +25,19 @@ const TaskCard: React.FunctionComponent<Props> = ({ task }) => {
   };
 
   return (
-    <div>
-      <h2>{task.title}</h2>
-      <p>{task.description}</p>
-      <span>{task.done ? "✔️" : "❌"}</span>
+    <div className="border-2 border-slate-600 rounded-md p-4 ">
+      <header className="flex flex-row items-center justify-between">
+        <h2 className="text-3xl font-bolt">{task.title}</h2>
+        <span className="text-xl">{task.done ? "✔️" : "❌"}</span>
+      </header>
+      <p className="text-md">{task.description}</p>
       <span>{moment(task.created_at).format("DD/MM/YYYY")}</span>
-      <button onClick={() => handleDelete(task.id as number)}>Delete </button>
-      <button onClick={() => navigate(`/edit/${task.id}`)}>Edit</button>
-      <button onClick={() => handleDone(task.id as number, task.done as boolean)}>Done</button>
-
+      <div className="flex flex-wrap gap-2 mt-3 justify-center">
+        <button className="bg-red-600 py-1 px-4 rounded-lg " onClick={() => handleDelete(task.id as number)}>Delete </button>
+        <button className="bg-green-500 py-1 px-4 rounded-lg" onClick={() => navigate(`/edit/${task.id}`)}>Edit</button>
+        <button className="bg-violet-500 py-1 px-4 rounded-lg" onClick={() => handleDone(task.id as number, task.done as boolean)}>Done</button>
+      </div>
+      
       <Toaster />
     </div>
   );
