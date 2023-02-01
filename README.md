@@ -36,12 +36,12 @@ Despues de clonar el proyecto debemos crear un archivo .env  en donde definiremo
 
 
 <p align="center">
-    <img src="./assets/01.png" />
+    <img src="./assets/taskform.png" />
 <p/>
 
 
 <p align="center">
-    <img src="./assets/02.png" />
+    <img src="./assets/taskpage.png" />
 <p/>
 
 
